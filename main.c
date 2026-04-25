@@ -46,9 +46,6 @@ int main(int argc, char *argv[]) {
         return 4;
     }
     
-
-
-    
     free(very_expensive_memory);
 
     return 0;
