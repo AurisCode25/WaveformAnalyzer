@@ -4,6 +4,13 @@
 #include "io.h"
 #include "waveform.h"
 
+enum{
+    ERROR_NONE = 0,
+    ERROR_ARGV = 1,
+    ERROR_EMPTY_FILE = 2,
+    ERROR_MEMORY = 3,
+    ERROR_CSV_READ = 4
+};
 
 static const struct {
     const char *phase;
@@ -17,17 +24,20 @@ phase_info[3] = {
 };
 
 int main(int argc, char *argv[]) {
+    int status = ERROR_NONE;
     CSV_Inputs *very_expensive_memory = NULL;
     if (argc != 2) {
         fprintf(stderr, "Error: Could not open CSV file (atleast you won't get any intruders).\n");
-        return 1;
+        status = ERROR_ARGV;
+        goto cleanup;
 
     }
 
     int n = count_rows(argv[1]);
     if (n <= 0) {
         fprintf(stderr, "Error: File could not be read or is empty (is anyone in there????).\n");
-        return 2;
+        status = ERROR_EMPTY_FILE;
+        goto cleanup;
 
     }
 
@@ -36,19 +46,22 @@ int main(int argc, char *argv[]) {
     //Checking memory allocation
     if (very_expensive_memory == NULL) {
         fprintf(stderr, "Error: Could not allocate memory (its too expensive in this economy!)\n");
-        return 3;
+        status = ERROR_MEMORY;
+        goto cleanup;
 
     }
 
     int csv = csv_memory(argv[1], very_expensive_memory, n);
     if (csv != n) {
         fprintf(stderr, "Error: Failed to read all rows from the CSV file (might have to bring out the reading glasses).\n");
-        return 4;
+        status = ERROR_CSV_READ;
+        goto cleanup;
     }
 
     Results outputs[3];
     for (int i = 0; i < 3; i++) {
         outputs[i] = phase_analysis(very_expensive_memory, n, phase_info[i].offset, phase_info[i].phase[0]);
+    
     }
 
     printf("Phase\tDC Offset\tPeak-to-Peak\tRMS\tClipping\tCompliance\n");
@@ -60,11 +73,14 @@ int main(int argc, char *argv[]) {
                 outputs[i].RMS,
                 outputs[i].Clipping,
                 outputs[i].Compliance ? "Yes" : "No");
+    
     }
     write_output("output.txt", outputs, 3, very_expensive_memory, n);
     fprintf(stdout, ("\nProcess Complete: view output.txt! YAYYY!!!!!!!!"));
     
+    cleanup:
     free(very_expensive_memory);
+    very_expensive_memory = NULL;
 
     return 0;
 
