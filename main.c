@@ -45,6 +45,24 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Error: Failed to read all rows from the CSV file (might have to bring out the reading glasses).\n");
         return 4;
     }
+
+    Results outputs[3];
+    for (int i = 0; i < 3; i++) {
+        outputs[i] = phase_analysis(very_expensive_memory, n, phase_info[i].offset, phase_info[i].phase[0]);
+    }
+
+    fprintf(stdout, "Phase\tDC Offset\tPeak-to-Peak\tRMS\tClipping\tCompliance\n");
+    for (int i = 0; i < 3; i++) {
+        fprintf(stdout, "%-8c %-12.2f %-14.2f %-8.2f %-10d %s\n",
+                outputs[i].Phase,
+                outputs[i].DC_Offset,
+                outputs[i].Peak_to_Peak,
+                outputs[i].RMS,
+                outputs[i].Clipping,
+                outputs[i].Compliance ? "Yes" : "No");
+    }
+    write_output("output.txt", outputs, 3, very_expensive_memory, n);
+    fprintf(stdout, ("\nProcess Complete: view output.txt! YAYYY!!!!!!!!"));
     
     free(very_expensive_memory);
 

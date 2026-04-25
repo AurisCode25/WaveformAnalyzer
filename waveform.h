@@ -37,6 +37,7 @@ double calc_rms(const CSV_Inputs *sample, int n, int offset);
 int detect_clipping(const CSV_Inputs *sample, int n, int offset);
 int check_compliance(const Results *results);
 
+Results phase_analysis(const CSV_Inputs *sample, int n, int offset, char phase);
 
 #endif
 
