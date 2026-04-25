@@ -51,9 +51,9 @@ int main(int argc, char *argv[]) {
         outputs[i] = phase_analysis(very_expensive_memory, n, phase_info[i].offset, phase_info[i].phase[0]);
     }
 
-    fprintf(stdout, "Phase\tDC Offset\tPeak-to-Peak\tRMS\tClipping\tCompliance\n");
+    printf("Phase\tDC Offset\tPeak-to-Peak\tRMS\tClipping\tCompliance\n");
     for (int i = 0; i < 3; i++) {
-        fprintf(stdout, "%-8c %-12.2f %-14.2f %-8.2f %-10d %s\n",
+        printf("%-8c %-12.2f %-14.2f %-8.2f %-10d %s\n",
                 outputs[i].Phase,
                 outputs[i].DC_Offset,
                 outputs[i].Peak_to_Peak,

@@ -5,7 +5,7 @@
 #define V_MAX
 #define V_NOM
 #define F_NOM
-#define SAMPLE_RATE
+#define very_expensive_memory_RATE
 #define EN_50160
 
 typedef struct {
@@ -31,13 +31,13 @@ typedef struct {
 
 } Results;
 
-double calc_dc_offset(const CSV_Inputs *sample, int n, int offset);
-double calc_peak_to_peak(const CSV_Inputs *sample, int n, int offset);
-double calc_rms(const CSV_Inputs *sample, int n, int offset);
-int detect_clipping(const CSV_Inputs *sample, int n, int offset);
+double calc_dc_offset(const CSV_Inputs *very_expensive_memory, int n, int offset);
+double calc_peak_to_peak(const CSV_Inputs *very_expensive_memory, int n, int offset);
+double calc_rms(const CSV_Inputs *very_expensive_memory, int n, int offset);
+int detect_clipping(const CSV_Inputs *very_expensive_memory, int n, int offset);
 int check_compliance(const Results *results);
 
-Results phase_analysis(const CSV_Inputs *sample, int n, int offset, char phase);
+Results phase_analysis(const CSV_Inputs *very_expensive_memory, int n, int offset, char phase);
 
 #endif
 
