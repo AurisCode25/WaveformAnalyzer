@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 
     }
 
-    very_expensive_memory = malloc(n * sizeof(CSV_Inputs));
+    CSV_Inputs *very_expensive_memory = malloc(n * sizeof(CSV_Inputs));
 
     //Checking memory allocation
     if (very_expensive_memory == NULL) {
