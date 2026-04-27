@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/Auris/Documents/UWE/Programming/Code/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe   -g -std=gnu99 -Wall -Wextra -o CMakeFiles\\waveform_analyser.dir\\main.c.obj -c C:\\Users\\Auris\\Documents\\UWE\\Programming\\Code\\main.c",
+  "file": "C:/Users/Auris/Documents/UWE/Programming/Code/main.c",
+  "output": "CMakeFiles/waveform_analyser.dir/main.c.obj"
+},
+{
+  "directory": "C:/Users/Auris/Documents/UWE/Programming/Code/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe   -g -std=gnu99 -Wall -Wextra -o CMakeFiles\\waveform_analyser.dir\\waveform.c.obj -c C:\\Users\\Auris\\Documents\\UWE\\Programming\\Code\\waveform.c",
+  "file": "C:/Users/Auris/Documents/UWE/Programming/Code/waveform.c",
+  "output": "CMakeFiles/waveform_analyser.dir/waveform.c.obj"
+},
+{
+  "directory": "C:/Users/Auris/Documents/UWE/Programming/Code/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe   -g -std=gnu99 -Wall -Wextra -o CMakeFiles\\waveform_analyser.dir\\io.c.obj -c C:\\Users\\Auris\\Documents\\UWE\\Programming\\Code\\io.c",
+  "file": "C:/Users/Auris/Documents/UWE/Programming/Code/io.c",
+  "output": "CMakeFiles/waveform_analyser.dir/io.c.obj"
+}
+]

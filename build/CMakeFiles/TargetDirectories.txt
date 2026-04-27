@@ -1,0 +1,5 @@
+C:/Users/Auris/Documents/UWE/Programming/Code/build/CMakeFiles/waveform_analyser.dir
+C:/Users/Auris/Documents/UWE/Programming/Code/build/CMakeFiles/package.dir
+C:/Users/Auris/Documents/UWE/Programming/Code/build/CMakeFiles/package_source.dir
+C:/Users/Auris/Documents/UWE/Programming/Code/build/CMakeFiles/edit_cache.dir
+C:/Users/Auris/Documents/UWE/Programming/Code/build/CMakeFiles/rebuild_cache.dir
