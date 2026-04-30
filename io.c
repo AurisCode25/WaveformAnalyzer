@@ -121,26 +121,7 @@ void write_output(const char *filename, const Results *results, int N_phases, co
         }
     }
 
-    double F_MIN, F_MAX, F_AVG;
-    double PF_MIN, PF_MAX, PF_AVG;
-    double THD_MIN, THD_MAX, THD_AVG;
-
-    stats(memory, n, (int)((const char *)&memory[0].frequency - (const char *)&memory[0]), &F_MIN, &F_MAX, &F_AVG);
-    stats(memory, n, (int)((const char *)&memory[0].power_factor - (const char *)&memory[0]), &PF_MIN, &PF_MAX, &PF_AVG);
-    stats(memory, n, (int)((const char *)&memory[0].THD_percent - (const char *)&memory[0]), &THD_MIN, &THD_MAX, &THD_AVG);
-
-    fprintf(file, "Stats Summary:\n");
-    fprintf(file, "  requency Min: %.2f Hz\n", F_MIN);
-    fprintf(file, "  frequency Max: %.2f Hz\n", F_MAX);
-    fprintf(file, "  frequency Avg: %.2f Hz\n", F_AVG);
-    fprintf(file, "  Power Factor Min: %.2f\n", PF_MIN);
-    fprintf(file, "  Power Factor Max: %.2f\n", PF_MAX);
-    fprintf(file, "  Power Factor Avg: %.2f\n", PF_AVG);
-    fprintf(file, "  THD Percent Min: %.2f%%\n", THD_MIN);
-    fprintf(file, "  THD Percent Max: %.2f%%\n", THD_MAX);
-    fprintf(file, "  THD Percent Avg: %.2f%% %s\n", THD_AVG,
-        THD_AVG < 5.0 ? "[Good] <5.0%" : THD_AVG < 10.0 ? "[Elevated] <10.0%" : "[Too much] >10.0%");
-
+    
     fprintf(file, "  Clipping Summary (threshold |V| >= %.1f V)\n", V_NOM * (1.0 + EN_50160));
     for (int i = 0; i < N_phases; i++) {
         fprintf(file, "  Phase %c: %d samples clipped %s\n",
