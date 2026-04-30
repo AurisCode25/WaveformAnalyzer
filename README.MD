@@ -6,7 +6,7 @@ To run the program successfully open the folder that contains the programs execu
 
         ./waveform_analyser "CSV_Filename".csv
 
-An output.txt file will appear in that folder with all the information and will tell you if the data is compliant or not
+An output.txt file will appear in that folder with all the information and will tell you if the data is compliant or not.
 
 
 
