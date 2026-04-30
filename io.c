@@ -10,7 +10,6 @@
 int count_rows(const char *filename) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
-        fprintf(stderr, "Error: Couldn't open CSV file (get better at hide and seek!!!!!).\n");
         return 1;
     }
 
@@ -35,7 +34,6 @@ int count_rows(const char *filename) {
 int csv_memory(const char *filename, CSV_Inputs *memory, int N_MAX) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
-        fprintf(stderr, "Error: Couldn't open CSV file (get better at hide and seek!!!!!).\n");
         return 0;
     }
 

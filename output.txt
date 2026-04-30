@@ -1,0 +1,36 @@
+Dataset: 1000 samples parsed at 5000 samples/s (0.20 s)
+Phase Analysis (EN 50160 band: 207 V - 253 V)
+Phase A:
+  DC Offset: 0.01 V
+  Peak-to-Peak: 650.54 V
+  RMS: 230.015 V
+  Compliant: Yes
+  Clipping: 420 samples
+Phase B:
+  DC Offset: 0.00 V
+  Peak-to-Peak: 650.40 V
+  RMS: 230.001 V
+  Compliant: Yes
+  Clipping: 440 samples
+Phase C:
+  DC Offset: 0.00 V
+  Peak-to-Peak: 650.40 V
+  RMS: 230.001 V
+  Compliant: Yes
+  Clipping: 440 samples
+Stats Summary:
+  requency Min: 50.00 Hz
+  frequency Max: 50.05 Hz
+  frequency Avg: 50.02 Hz
+  Power Factor Min: 0.95
+  Power Factor Max: 0.96
+  Power Factor Avg: 0.96
+  THD Percent Min: 2.00%
+  THD Percent Max: 2.18%
+  THD Percent Avg: 2.09% [Good] <5.0%
+  Clipping Summary (threshold |V| >= 253.0 V)
+  Phase A: 420 samples clipped [Clipping Detected]
+  Phase B: 440 samples clipped [Clipping Detected]
+  Phase C: 440 samples clipped [Clipping Detected]
+Total: 1300 samples clipped [Clipping Detected]
+Overall Compliance: Compliant with EN 50160
