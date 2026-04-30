@@ -8,6 +8,4 @@ To run the program successfully open the folder that contains the programs execu
 
 An output.txt file will appear in that folder with all the information and will tell you if the data is compliant or not.
 
-
-
-
+Link to github: https://github.com/AurisCode25/WaveformAnalyzer
